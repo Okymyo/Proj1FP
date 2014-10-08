@@ -15,7 +15,11 @@ def gera_num_cc(rede_em):
 def calc_soma(a_somar):
     #Input: string(a_somar)
     #Output: int(soma)
-    print("!!!!!")
+    soma = 0
+    for c in a_somar:
+        soma += eval(c)
+        
+    return soma
 
 def luhn_verifica(a_verificar):
     #Input: string(a_verificar)
