@@ -1,7 +1,7 @@
-# Grupo 21: Nuno Anselmo (81900); Fabio Pinheiro (81909); Mariana Silva (81938)
+# Grupo 21: Nuno Anselmo (81900); Mariana Silva (81938)
 
 def verifica_cc(num_cc):
-    #FABIO
+    #NUNO
     #Input: int(num_cc)
     #Output 1: string(cat_em), string(rede_em)
     #Output 2: string('cartao invalido')
@@ -31,13 +31,13 @@ def luhn_verifica(a_verificar):
     print("!!!!!")
 
 def comeca_por():
-    #FABIO
+    #MARIANA
     #Input: string(), string()
     #Output: bool()
     print("!!!!!")
     
 def comeca_por_um():
-    #FABIO
+    #MARIANA
     #Input: string(), tuple()
     #Output: bool()
     print("!!!!!")
