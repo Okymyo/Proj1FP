@@ -20,7 +20,7 @@ def calc_soma(a_somar):
     #Output: int(soma)
     soma = 0
     for c in a_somar:
-        soma += eval(c)
+        soma += int(c)
         
     return soma
 
