@@ -50,11 +50,18 @@ def valida_iin():
     print("!!!!!")
 
 def categoria():
-    #MARIANA
     #Input: string()
     #Output 1: string(cat_em)
-    #Output 2: string('categoria invalida')
-    print("!!!!!")
+    #Output 2: string('categoria invalida')    
+    
+    if 1 <= int(numero[0]) <= 9:
+        
+        categorias = ['Companhias aereas','Companhias aereas e outras tarefas futuras da industria','Viagens e entretenimento e bancario / financeiro','Servicos bancarios e financeiros','Servicos bancarios e financeiros','Merchandising e bancario / financeiro','Petroleo e outras atribuicoes futuras da industria','Saude, telecomunicacoes e outras atribuicoes futuras da industria','Atribuicao nacional'] 
+        
+        return categorias[int(numero[0])-1]   
+    
+    else:
+        raise ValueError ('O primeiro digito so pode conter numeros de 1 e 9!')
     
 def digito_verificacao():
     #MARIANA
