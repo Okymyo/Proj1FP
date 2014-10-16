@@ -30,11 +30,11 @@ def luhn_verifica(a_verificar):
     #Output: bool(valido)
     print("!!!!!")
 
-def comeca_por():
-    #MARIANA
+def comeca_por(cad1,cad2):
     #Input: string(), string()
     #Output: bool()
-    print("!!!!!")
+ 
+    return cad2 in cad1[0:len(cad2)]
     
 def comeca_por_um():
     #MARIANA
