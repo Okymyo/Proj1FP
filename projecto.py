@@ -27,9 +27,9 @@ def calc_soma(a_somar):
 def luhn_verifica(numero_cc):
     '''Funcao luhn_verifica: string -> bool
        Recebe uma cadeia de carateres (numero_cc) que representa 
-       um número de cartão.
-       Devolve verdadeiro, se o número passar o algoritmo de Luhn.
-       Em caso contrário, devolve falso.'''    
+       um numero de cartao.
+       Devolve verdadeiro, se o numero passar o algoritmo de Luhn.
+       Em caso contrario, devolve falso.'''    
     
     digito = int(numero_cc) % 10 # Guardar o ultimo digito do numero.
     numero_cc = int(numero_cc) // 10 # Retirar o ultimo digito do numero.
@@ -44,13 +44,13 @@ def luhn_verifica(numero_cc):
     # Multiplicar os digitos em posicoes impares por 2:    
     
         
-    # Subtraia 9 a todos os números resultantes que sejam superiores a 9:
+    # Subtrair 9 a todos os numeros resultantes que sejam superiores a 9:
     
             
     # Adicionar todos os numeros, incluindo o numero de verificacao:
     calc_soma(invertido)
     
-    return soma % 10 == 0
+    return (soma + digito) % 10 == 0
 
 def comeca_por(cad1,cad2):
     '''Funcao comeca_por: (string,string) -> bool
