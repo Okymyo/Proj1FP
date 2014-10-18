@@ -155,8 +155,9 @@ def valida_iin(input_string): #N
         return ''
     
 def categoria(numero): #M
-    '''Funcao categoria: string -> string'''
-      
+    '''Funcao categoria: string -> string
+       Recebe uma cadeia de carateres, e devolve uma cadeia correspondente
+       a categoria da entidade correspondente ao primeiro carater da cadeia'''   
     
     if 1 <= int(numero[0]) <= 9:
         
