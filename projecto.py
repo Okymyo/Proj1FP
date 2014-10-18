@@ -1,5 +1,8 @@
 # Grupo 21: Nuno Anselmo (81900); Mariana Silva (81938)
 
+import random
+import math
+
 def verifica_cc(num_cc): #N
     '''Funcao verifica_cc: int -> tuple ; caso erro: int -> string
        Recebe um inteiro (num_cc) correspondente a um possivel numero 
@@ -8,6 +11,7 @@ def verifica_cc(num_cc): #N
        numero corresponder a um cartao de credito ou a cadeia de caracteres.
        Em caso contrario devolve uma string com 'Cartao Invalido'.'''
     
+    # Todas as funcoes secundarias recebem strings, portanto converte-se
     num_cc = str(num_cc)
     
     resposta = (categoria(num_cc), valida_iin(num_cc))
@@ -24,6 +28,39 @@ def gera_num_cc(rede_em): #N
        Recebe uma cadeia de carateres (rede_em) correspondente a
        abreviatura de uma rede emissora.
        Devolve um numero de cartao de credito valido, gerado aleatoriamente.'''
+    
+    cartao = 0
+    num_digitos = 0
+    
+    # Tuplo que guarda a informacao das redes
+    # Primeira entrada: abreviatura
+    # Segunda entrada: tuplo com possiveis comprimentos
+    # Terceira entrada: tuplo com possiveis primeiros digitos      
+    
+    tuplo_rede = (('AE', (15,), (34, 37)),
+                 ('DCI', (14,), (309, 36, 38, 39)),
+                 ('DC', (16,), (65,)),
+                 ('M', (13, 19), (5018, 5020, 5038)),
+                 ('MC', (16,), (50, 51, 52, 53, 54, 19)),
+                 ('VE', (16,), (4026, 426, 4405, 4508)),
+                 ('V', (13, 16), (4024, 4532, 4556)))
+    
+    for tuplo in tuplo_rede:
+        if tuplo[0] == rede_em:
+            num_digitos = tuplo[1][int(random.random() * 10) % len(tuplo[1])]
+            cartao = tuplo[2][int(random.random() * 10) % len(tuplo[2])]
+            
+            num_digitos -= (int(math.log10(cartao)) + 1)
+            
+            while num_digitos > 1: # Deixar ultimo digito para o de verificacao
+                cartao = (cartao * 10) + int(random.random() * 10)
+                num_digitos -= 1
+            
+            # A funcao digito_verificacao recebe e devolve string, logo e
+            # necessario converter para string o input e para int o output
+            cartao = cartao*10 + int(digito_verificacao(str(cartao)))
+        
+    return cartao
     
 
 def calc_soma(a_somar): #N
