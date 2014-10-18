@@ -6,7 +6,7 @@ def verifica_cc(num_cc): #N
        de um cartao de credito.
        Devolve um tuplo contendo a categoria e a rede do cartao se o
        numero corresponder a um cartao de credito ou a cadeia de caracteres.
-       Em caso contrario devolve uam string com 'Cartao Invalido'.'''
+       Em caso contrario devolve uma string com 'Cartao Invalido'.'''
     
     
 def gera_num_cc(rede_em): #N
@@ -124,7 +124,19 @@ def categoria(numero): #M
     else:
         raise ValueError ('O primeiro digito so pode conter numeros de 1 e 9!')
     
-def digito_verificacao(): #M
-    #Input: string()
-    #Output: string(dig_ver)
-    print("!!!!!")
+
+def digito_verificacao(numero_cc): #M
+    '''Funcao digito_verificacao: string -> string
+       Recebe uma cadeia de carateres (numero_cc), que representa um numero de 
+       cartao, sem o ultimo digito.
+       Devolve o digito de verificacao que lhe devera ser acrescentado, 
+       de forma a obter um numero de cartao valido.'''
+    
+    # Obtem-se o digito de verificacao ao subtrair a 10 o valor das somas
+    # o que vai "complementar" o ultimo digito 
+    #
+    # soma + dig = 10 => dig = 10 - soma
+    #
+    # Como apenas interessa o ultimo digito calcula-se o resto da divisao por 10 
+    
+    return str((10 - calc_soma(numero_cc)) % 10)
