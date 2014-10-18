@@ -8,6 +8,14 @@ def verifica_cc(num_cc): #N
        numero corresponder a um cartao de credito ou a cadeia de caracteres.
        Em caso contrario devolve uma string com 'Cartao Invalido'.'''
     
+    resposta = (categoria(num_cc), valida_iin(num_cc))
+    
+    if (luhn_verifica(num_cc) and resposta[0] != '' and resposta[1] != ''):
+        return resposta
+    
+    else:
+        return 'cartao invalido'
+    
     
 def gera_num_cc(rede_em): #N
     '''Funcao gera_num_c: string -> int
@@ -122,7 +130,7 @@ def categoria(numero): #M
         return categorias[int(numero[0])-1]   
     
     else:
-        raise ValueError ('O primeiro digito so pode conter numeros de 1 e 9!')
+        return ''
     
 
 def digito_verificacao(numero_cc): #M
