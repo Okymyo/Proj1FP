@@ -5,7 +5,7 @@ def verifica_cc(num_cc): #N
        Recebe um inteiro (num_cc) correspondente a um possivel numero 
        de um cartao de credito.
        Devolve um tuplo contendo a categoria e a rede do cartao se o
-       numero corresponder a um cartão de credito ou a cadeia de caracteres.
+       numero corresponder a um cartao de credito ou a cadeia de caracteres.
        Em caso contrario devolve uam string com 'Cartao Invalido'.'''
     
     
