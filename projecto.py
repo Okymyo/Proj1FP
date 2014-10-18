@@ -52,23 +52,7 @@ def luhn_verifica(numero_cc): #M
     digito = int(numero_cc) % 10 # Guardar o ultimo digito do numero.
     numero_cc = int(numero_cc) // 10 # Retirar o ultimo digito do numero.
     
-    # Inverter o numero, ja sem o ultimo digito:
-    invertido = 0
-    
-    while int(numero_cc) > 0:
-        invertido = invertido * 10 + int(numero_cc) % 10
-        numero_cc = int(numero_cc) / 10
-        
-    # Multiplicar os digitos em posicoes impares por 2:    
-    
-        
-    # Subtrair 9 a todos os numeros resultantes que sejam superiores a 9:
-    
-            
-    # Adicionar todos os numeros, incluindo o numero de verificacao:
-    calc_soma(invertido)
-    
-    return (soma + digito) % 10 == 0
+    return (calc_soma(numero_cc) + digito) % 10 == 0
 
 def comeca_por(cad1,cad2): #M
     '''Funcao comeca_por: (string,string) -> bool
