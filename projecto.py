@@ -24,17 +24,39 @@ def calc_soma(a_somar):
         
     return soma
 
-def luhn_verifica(a_verificar):
-    #MARIANA
-    #Input: string(a_verificar)
-    #Output: bool(valido)
-    print("!!!!!")
+def luhn_verifica(numero_cc):
+    '''Funcao luhn_verifica: string -> bool
+       Recebe uma cadeia de carateres (numero_cc) que representa 
+       um número de cartão.
+       Devolve verdadeiro, se o número passar o algoritmo de Luhn.
+       Em caso contrário, devolve falso.'''    
+    
+    digito = int(numero_cc) % 10 # Guardar o ultimo digito do numero.
+    numero_cc = int(numero_cc) // 10 # Retirar o ultimo digito do numero.
+    
+    # Inverter o numero, ja sem o ultimo digito:
+    invertido = 0
+    
+    while int(numero_cc) > 0:
+        invertido = invertido * 10 + int(numero_cc) % 10
+        numero_cc = int(numero_cc) / 10
+        
+    # Multiplicar os digitos em posicoes impares por 2:    
+    
+        
+    # Subtraia 9 a todos os números resultantes que sejam superiores a 9:
+    
+            
+    # Adicionar todos os numeros, incluindo o numero de verificacao:
+    calc_soma(invertido)
+    
+    return soma % 10 == 0
 
 def comeca_por(cad1,cad2):
     '''Funcao comeca_por: (string,string) -> bool
        Recebe duas cadeias de carateres, cad1 e cad2. 
        Devolve verdadeiro se cad1 começar por cad2. 
-       Caso contrário devolve falso.'''
+       Caso contrario devolve falso.'''
     
     return cad2 in cad1[0:len(cad2)]
     
@@ -42,7 +64,7 @@ def comeca_por_um(cad,t_cads):
     '''Funcao comeca_por_um: (string,tuple) -> bool
        Recebe uma cadeia de carateres (cad) e um 
        tuplo de cadeias de caracteres (t_cads). 
-       Devolve verdadeiro apenas se cad começar por um 
+       Devolve verdadeiro apenas se cad comecar por um 
        dos elementos do tuplo t_cads.'''
     
     for i in range(len(t_cads)):
