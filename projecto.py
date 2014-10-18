@@ -1,20 +1,28 @@
 # Grupo 21: Nuno Anselmo (81900); Mariana Silva (81938)
 
 def verifica_cc(num_cc): #N
-    #Input: int(num_cc)
-    #Output 1: string(cat_em), string(rede_em)
-    #Output 2: string('cartao invalido')
-    print("!!!!!")
-
+    '''Funcao verifica_cc: int -> tuple ; caso erro: int -> string
+       Recebe um inteiro (num_cc) correspondente a um possivel numero 
+       de um cartao de credito.
+       Devolve um tuplo contendo a categoria e a rede do cartao se o
+       numero corresponder a um cartão de credito ou a cadeia de caracteres.
+       Em caso contrario devolve uam string com 'Cartao Invalido'.'''
+    
+    
 def gera_num_cc(rede_em): #N
-    #Input: string(rede_em)
-    #Output 1: int(num_cc)
-    #Output 2: string('emissor invalido')
-    print("!!!!!")
+    '''Funcao gera_num_c: string -> int
+       Recebe uma cadeia de carateres (rede_em) correspondente a
+       abreviatura de uma rede emissora.
+       Devolve um numero de cartao de credito valido, gerado aleatoriamente.'''
+    
 
 def calc_soma(a_somar): #N
-    #Input: string(a_somar)
-    #Output: int(soma)
+    '''Funcao calc_soma: string -> int
+       Recebe uma cadeia de carateres (a_somar), representando um numero 
+       de cartao, sem o ultimo digito. 
+       Devolve a soma ponderada dos digitos de a_somar, calculada de 
+       acordo com o algoritmo de Luhn.'''
+    
     soma = 0
     for c in a_somar:
         soma += int(c)
@@ -77,9 +85,8 @@ def valida_iin(): #N
     print("!!!!!")
 
 def categoria(numero): #M
-    '''Funcao categoria: (string) -> string
-    #Output 1: string(cat_em)
-    #Output 2: string('categoria invalida')'''   
+    '''Funcao categoria: string -> string'''
+      
     
     if 1 <= int(numero[0]) <= 9:
         
