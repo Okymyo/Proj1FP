@@ -91,12 +91,32 @@ def comeca_por_um(cad,t_cads): #M
     return False
     
     
-def valida_iin(): #N
+def valida_iin(input_string): #N
     #Input: string()
     #Output 1: string()
     #Output 2: string('')
-    print("!!!!!")
+    
+    # Tuplo que guarda a composicao do IIN
+    # Primeira entrada: nome
+    # Segunda entrada: tuplo com possiveis comprimentos
+    # Terceira entrada: tuplo com possiveis primeiros digitos
+    
+    tuplo_iins = (('American Express', (15,), ('34', '37')),
+             ('Diners Club International', (14,), ('309', '36', '38', '39')),
+             ('Discover Card', (16,), ('65')),
+             ('Maestro', (13, 19), ('5018', '5020', '5038')),
+             ('Master Card', (16,), ('50', '51', '52', '53', '54', '19')),
+             ('Visa Electron', (16,), ('4026', '426', '4405', '4508')),
+             ('Visa', (13, 16), ('4024', '4532', '4556')))
+    
 
+    for tuplo in tuplo_iins:
+        if len(input_string) in tuplo[1] and comeca_por_um(input_string, tuplo[2]):
+            return tuplo[0]
+        
+    else:
+        return ''
+    
 def categoria(numero): #M
     '''Funcao categoria: string -> string'''
       
