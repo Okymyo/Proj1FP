@@ -69,8 +69,8 @@ def comeca_por_um(cad,t_cads): #M
        Devolve verdadeiro apenas se cad comecar por um 
        dos elementos do tuplo t_cads.'''
     
-    for i in range(len(t_cads)):
-        if t_cads[i] in cad[0:len(t_cads[i])]:
+    for c in t_cads:
+        if comeca_por(cad, c):
             return True
     return False
     
@@ -89,7 +89,7 @@ def valida_iin(input_string): #N
     
     tuplo_iins = (('American Express', (15,), ('34', '37')),
              ('Diners Club International', (14,), ('309', '36', '38', '39')),
-             ('Discover Card', (16,), ('65')),
+             ('Discover Card', (16,), ('65',)),
              ('Maestro', (13, 19), ('5018', '5020', '5038')),
              ('Master Card', (16,), ('50', '51', '52', '53', '54', '19')),
              ('Visa Electron', (16,), ('4026', '426', '4405', '4508')),
