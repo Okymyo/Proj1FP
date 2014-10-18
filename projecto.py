@@ -57,7 +57,7 @@ def luhn_verifica(numero_cc): #M
 def comeca_por(cad1,cad2): #M
     '''Funcao comeca_por: (string,string) -> bool
        Recebe duas cadeias de carateres, cad1 e cad2. 
-       Devolve verdadeiro se cad1 começar por cad2. 
+       Devolve verdadeiro se cad1 comecar por cad2. 
        Caso contrario devolve falso.'''
     
     return cad2 in cad1[0:len(cad2)]
