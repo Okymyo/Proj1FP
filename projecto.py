@@ -15,12 +15,26 @@ def gera_num_cc(rede_em): #N
 def calc_soma(a_somar): #N
     #Input: string(a_somar)
     #Output: int(soma)
+    
+    temp = []
     soma = 0
+    
     for c in a_somar:
-        soma += int(c)
+        temp = [int(c)] + temp
+        
+    for i in range(0, len(temp)):
+        if i % 2 == 0:
+            temp[i] = temp[i] * 2
+            
+            if temp[i] > 9:
+                temp[i] -= 9
+                
+    for n in temp:
+        soma += n
         
     return soma
-
+    
+    
 def luhn_verifica(numero_cc): #M
     '''Funcao luhn_verifica: string -> bool
        Recebe uma cadeia de carateres (numero_cc) que representa 
