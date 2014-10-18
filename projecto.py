@@ -8,6 +8,8 @@ def verifica_cc(num_cc): #N
        numero corresponder a um cartao de credito ou a cadeia de caracteres.
        Em caso contrario devolve uma string com 'Cartao Invalido'.'''
     
+    num_cc = str(num_cc)
+    
     resposta = (categoria(num_cc), valida_iin(num_cc))
     
     if (luhn_verifica(num_cc) and resposta[0] != '' and resposta[1] != ''):
