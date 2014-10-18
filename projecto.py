@@ -50,7 +50,7 @@ def luhn_verifica(numero_cc): #M
        Em caso contrario, devolve falso.'''    
     
     digito = int(numero_cc) % 10 # Guardar o ultimo digito do numero.
-    numero_cc = int(numero_cc) // 10 # Retirar o ultimo digito do numero.
+    numero_cc = numero_cc[:-1] # Retirar o ultimo digito do numero.
     
     return (calc_soma(numero_cc) + digito) % 10 == 0
 
