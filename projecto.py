@@ -1,21 +1,18 @@
 # Grupo 21: Nuno Anselmo (81900); Mariana Silva (81938)
 
-def verifica_cc(num_cc):
-    #NUNO
+def verifica_cc(num_cc): #N
     #Input: int(num_cc)
     #Output 1: string(cat_em), string(rede_em)
     #Output 2: string('cartao invalido')
     print("!!!!!")
 
-def gera_num_cc(rede_em):
-    #NUNO
+def gera_num_cc(rede_em): #N
     #Input: string(rede_em)
     #Output 1: int(num_cc)
     #Output 2: string('emissor invalido')
     print("!!!!!")
 
-def calc_soma(a_somar):
-    #NUNO
+def calc_soma(a_somar): #N
     #Input: string(a_somar)
     #Output: int(soma)
     soma = 0
@@ -24,7 +21,7 @@ def calc_soma(a_somar):
         
     return soma
 
-def luhn_verifica(numero_cc):
+def luhn_verifica(numero_cc): #M
     '''Funcao luhn_verifica: string -> bool
        Recebe uma cadeia de carateres (numero_cc) que representa 
        um numero de cartao.
@@ -52,7 +49,7 @@ def luhn_verifica(numero_cc):
     
     return (soma + digito) % 10 == 0
 
-def comeca_por(cad1,cad2):
+def comeca_por(cad1,cad2): #M
     '''Funcao comeca_por: (string,string) -> bool
        Recebe duas cadeias de carateres, cad1 e cad2. 
        Devolve verdadeiro se cad1 começar por cad2. 
@@ -60,7 +57,7 @@ def comeca_por(cad1,cad2):
     
     return cad2 in cad1[0:len(cad2)]
     
-def comeca_por_um(cad,t_cads):
+def comeca_por_um(cad,t_cads): #M
     '''Funcao comeca_por_um: (string,tuple) -> bool
        Recebe uma cadeia de carateres (cad) e um 
        tuplo de cadeias de caracteres (t_cads). 
@@ -73,14 +70,13 @@ def comeca_por_um(cad,t_cads):
     return False
     
     
-def valida_iin():
-    #NUNO
+def valida_iin(): #N
     #Input: string()
     #Output 1: string()
     #Output 2: string('')
     print("!!!!!")
 
-def categoria(numero):
+def categoria(numero): #M
     '''Funcao categoria: (string) -> string
     #Output 1: string(cat_em)
     #Output 2: string('categoria invalida')'''   
@@ -102,8 +98,7 @@ def categoria(numero):
     else:
         raise ValueError ('O primeiro digito so pode conter numeros de 1 e 9!')
     
-def digito_verificacao():
-    #MARIANA
+def digito_verificacao(): #M
     #Input: string()
     #Output: string(dig_ver)
     print("!!!!!")
