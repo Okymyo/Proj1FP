@@ -74,9 +74,12 @@ def calc_soma(a_somar): #N
     soma = 0
     
     for c in a_somar:
+        # Guardar os caracteres numa lista temporaria, como ints, invertidos
         temp = [int(c)] + temp
         
     for i in range(0, len(temp)):
+        # Para os numeros em posicoes impares (posicoes pares na lista)
+        # Multiplicar por 2, e subtrair 9 caso o resultado seja maior que 9
         if i % 2 == 0:
             temp[i] = temp[i] * 2
             
@@ -84,6 +87,7 @@ def calc_soma(a_somar): #N
                 temp[i] -= 9
                 
     for n in temp:
+        # Somar todos os numeros da lista para obter o resultado
         soma += n
         
     return soma
