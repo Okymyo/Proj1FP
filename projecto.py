@@ -76,9 +76,11 @@ def comeca_por_um(cad,t_cads): #M
     
     
 def valida_iin(input_string): #N
-    #Input: string()
-    #Output 1: string()
-    #Output 2: string('')
+    '''Funcao valida_iin: string -> string
+       Recebe uma cadeira de caracteres (input_string)
+       que e um numero de cartao, e devolve a cadeia
+       correspondente a rede emissora do cartao caso
+       exista (devolve vazio caso nao exista)'''
     
     # Tuplo que guarda a composicao do IIN
     # Primeira entrada: nome
