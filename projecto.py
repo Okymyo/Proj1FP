@@ -169,8 +169,8 @@ def categoria(numero): #M
     # Primeiro digito tem de ser um inteiro entre 1 e 9:
     if 1 <= int(numero[0]) <= 9: 
         
-        # Lista que contem as categorias:
-        categorias = ['Companhias aereas',
+        # Tuplo que contem as categorias:
+        categorias = ('Companhias aereas',
                       'Companhias aereas e outras tarefas futuras da industria',
                       'Viagens e entretenimento e bancario / financeiro',
                       'Servicos bancarios e financeiros',
@@ -178,9 +178,9 @@ def categoria(numero): #M
                       'Merchandising e bancario / financeiro',
                       'Petroleo e outras atribuicoes futuras da industria',
                       'Saude, telecomunicacoes e outras atribuicoes futuras da industria',
-                      'Atribuicao nacional'] 
+                      'Atribuicao nacional') 
         
-        # A primeira posicao da lista corresponde ao zero.
+        # A primeira posicao do tuplo corresponde ao zero.
         # Subtrai-se 1 ao primeiro digito para obtermos a correspondencia correta:
         return categorias[int(numero[0])-1]   
     
