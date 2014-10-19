@@ -20,7 +20,7 @@ def verifica_cc(num_cc): #N
         return resposta
     
     else:
-        return 'cartao Invalido'
+        return 'cartao invalido'
     
     
 def gera_num_cc(rede_em): #N
