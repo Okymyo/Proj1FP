@@ -11,7 +11,7 @@ def verifica_cc(num_cc): #N
        numero corresponder a um cartao de credito ou a cadeia de caracteres.
        Em caso contrario devolve uma string com 'Cartao Invalido'.'''
     
-    # Todas as funcoes secundarias recebem strings, portanto converte-se
+    # Como todas as funcoes secundarias recebem strings, converte-se.
     num_cc = str(num_cc)
     
     resposta = (categoria(num_cc), valida_iin(num_cc))
@@ -20,7 +20,7 @@ def verifica_cc(num_cc): #N
         return resposta
     
     else:
-        return 'cartao invalido'
+        return 'Cartao Invalido'
     
     
 def gera_num_cc(rede_em): #N
@@ -32,7 +32,7 @@ def gera_num_cc(rede_em): #N
     cartao = 0
     num_digitos = 0
     
-    # Tuplo que guarda a informacao das redes
+    # Tuplo que guarda a informacao das redes:
     # Primeira entrada: abreviatura
     # Segunda entrada: tuplo com possiveis comprimentos
     # Terceira entrada: tuplo com possiveis primeiros digitos      
@@ -74,20 +74,21 @@ def calc_soma(a_somar): #N
     soma = 0
     
     for c in a_somar:
-        # Guardar os caracteres numa lista temporaria, como ints, invertidos
+        # Guardar os caracteres numa lista temporaria, como ints, invertidos.
         temp = [int(c)] + temp
-        
+     
+   
     for i in range(0, len(temp)):
-        # Para os numeros em posicoes impares (posicoes pares na lista)
-        # Multiplicar por 2, e subtrair 9 caso o resultado seja maior que 9
+        # Multiplicar por 2 os numeros em posicoes impares:
+        # Na lista correspondem a posicoes pares:
         if i % 2 == 0:
             temp[i] = temp[i] * 2
-            
+            # Subtrair 9 caso o resultado seja superior a 9:        
             if temp[i] > 9:
                 temp[i] -= 9
                 
+    # Somar todos os numeros da lista para obter o resultado:           
     for n in temp:
-        # Somar todos os numeros da lista para obter o resultado
         soma += n
         
     return soma
@@ -115,8 +116,8 @@ def comeca_por(cad1,cad2): #M
     
 def comeca_por_um(cad,t_cads): #M
     '''Funcao comeca_por_um: (string,tuple) -> bool
-       Recebe uma cadeia de carateres (cad) e um 
-       tuplo de cadeias de caracteres (t_cads). 
+       Recebe uma cadeia de carateres (cad) e um tuplo 
+       de cadeias de caracteres (t_cads). 
        Devolve verdadeiro apenas se cad comecar por um 
        dos elementos do tuplo t_cads.'''
     
@@ -128,12 +129,11 @@ def comeca_por_um(cad,t_cads): #M
     
 def valida_iin(input_string): #N
     '''Funcao valida_iin: string -> string
-       Recebe uma cadeira de caracteres (input_string)
-       que e um numero de cartao, e devolve a cadeia
-       correspondente a rede emissora do cartao caso
-       exista (devolve vazio caso nao exista)'''
+       Recebe uma cadeira de caracteres (input_string) que e um numero de cartao.
+       Devolve a cadeia correspondente a rede emissora do cartao, caso exista.
+       Caso contrario, devolve vazio.'''
     
-    # Tuplo que guarda a composicao do IIN
+    # Tuplo que guarda a composicao do IIN:
     # Primeira entrada: nome
     # Segunda entrada: tuplo com possiveis comprimentos
     # Terceira entrada: tuplo com possiveis primeiros digitos
@@ -156,11 +156,14 @@ def valida_iin(input_string): #N
     
 def categoria(numero): #M
     '''Funcao categoria: string -> string
-       Recebe uma cadeia de carateres, e devolve uma cadeia correspondente
-       a categoria da entidade correspondente ao primeiro carater da cadeia'''   
+       Recebe uma cadeia de carateres (numero).
+       Devolve uma cadeia que corresponde a categoria da entidade 
+       correspondente ao primeiro carater da cadeia.''' 
     
-    if 1 <= int(numero[0]) <= 9:
+    # Primeiro digito tem de ser um inteiro entre 1 e 9:
+    if 1 <= int(numero[0]) <= 9: 
         
+        # Lista que contem as categorias:
         categorias = ['Companhias aereas',
                       'Companhias aereas e outras tarefas futuras da industria',
                       'Viagens e entretenimento e bancario / financeiro',
@@ -171,6 +174,8 @@ def categoria(numero): #M
                       'Saude, telecomunicacoes e outras atribuicoes futuras da industria',
                       'Atribuicao nacional'] 
         
+        # A primeira posicao da lista corresponde ao zero.
+        # Subtrai-se 1 ao primeiro digito para obtermos a correspondencia correta:
         return categorias[int(numero[0])-1]   
     
     else:
@@ -184,11 +189,9 @@ def digito_verificacao(numero_cc): #M
        Devolve o digito de verificacao que lhe devera ser acrescentado, 
        de forma a obter um numero de cartao valido.'''
     
-    # Obtem-se o digito de verificacao ao subtrair a 10 o valor das somas
+    # Como: soma + digito = 10 => digito = 10 - soma
+    # Subtraimos a 10 o valor da soma dos outros digitos
     # o que vai "complementar" o ultimo digito 
-    #
-    # soma + dig = 10 => dig = 10 - soma
-    #
-    # Como apenas interessa o ultimo digito calcula-se o resto da divisao por 10 
+    # Para obtermos so o ultimo digito faz-se o resto da divisao por 10. 
     
     return str((10 - calc_soma(numero_cc)) % 10)
