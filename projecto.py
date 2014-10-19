@@ -195,9 +195,8 @@ def digito_verificacao(numero_cc): #M
        Devolve o digito de verificacao que lhe devera ser acrescentado, 
        de forma a obter um numero de cartao valido.'''
     
-    # Como: soma + digito = 10 => digito = 10 - soma
-    # Subtraimos a 10 o valor da soma dos outros digitos
-    # o que vai "complementar" o ultimo digito 
-    # Para obtermos so o ultimo digito faz-se o resto da divisao por 10. 
+    # Para obter o ultimo digito, calcula-se o resto da divisao por 10 do
+    # simetrico do numero dado, o que vai devolver o digito necessario para
+    # a soma ser divisivel por 10
     
-    return str((10 - calc_soma(numero_cc)) % 10)
+    return str(-calc_soma(numero_cc) % 10)
