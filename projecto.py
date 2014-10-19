@@ -35,7 +35,7 @@ def gera_num_cc(rede_em): #N
     # Tuplo que guarda a informacao das redes:
     # Primeira entrada: abreviatura
     # Segunda entrada: tuplo com possiveis comprimentos
-    # Terceira entrada: tuplo com possiveis primeiros digitos      
+    # Terceira entrada: tuplo com possiveis primeiros digitos
     
     tuplo_rede = (('AE', (15,), (34, 37)),
                  ('DCI', (14,), (309, 36, 38, 39)),
@@ -89,11 +89,11 @@ def calc_soma(a_somar): #N
         # Na lista correspondem a posicoes pares:
         if i % 2 == 0:
             temp[i] = temp[i] * 2
-            # Subtrair 9 caso o resultado seja superior a 9:        
+            # Subtrair 9 caso o resultado seja superior a 9:
             if temp[i] > 9:
                 temp[i] -= 9
                 
-    # Somar todos os numeros da lista para obter o resultado:           
+    # Somar todos os numeros da lista para obter o resultado:
     for n in temp:
         soma += n
         
@@ -105,7 +105,7 @@ def luhn_verifica(numero_cc): #M
        Recebe uma cadeia de carateres (numero_cc) que representa 
        um numero de cartao.
        Devolve verdadeiro, se o numero passar o algoritmo de Luhn.
-       Em caso contrario, devolve falso.'''    
+       Em caso contrario, devolve falso.'''
     
     digito = int(numero_cc) % 10 # Guardar o ultimo digito do numero.
     numero_cc = numero_cc[:-1] # Retirar o ultimo digito do numero.
@@ -182,7 +182,7 @@ def categoria(numero): #M
         
         # A primeira posicao do tuplo corresponde ao zero.
         # Subtrai-se 1 ao primeiro digito para obtermos a correspondencia correta:
-        return categorias[int(numero[0])-1]   
+        return categorias[int(numero[0])-1]
     
     else:
         return ''
