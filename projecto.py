@@ -13,7 +13,13 @@ def verifica_cc(num_cc): #N
     
     # Vamos realizar uma pequena validacao inicial, para certificar que
     # nenhuma das funcoes recebe algo que nao consiga manipular
-    if type(num_cc) != int:
+    #
+    # O Mooshak por alguma razao dava erro caso a verificacao fosse com
+    # type(num_cc) != int, logo usa-se um try
+    
+    try:
+        num_cc = int(num_cc)
+    except ValueError:
         return 'cartao invalido'
     
     # Como todas as funcoes secundarias recebem strings, converte-se.
