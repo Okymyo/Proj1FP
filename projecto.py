@@ -135,7 +135,7 @@ def comeca_por_um(cad,t_cads): #M
     
 def valida_iin(input_string): #N
     '''Funcao valida_iin: string -> string
-       Recebe uma cadeira de caracteres (input_string) que e um numero de cartao.
+       Recebe uma cadeira de caracteres (input_string), um numero de cartao.
        Devolve a cadeia correspondente a rede emissora do cartao, caso exista.
        Caso contrario, devolve vazio.'''
     
@@ -154,7 +154,8 @@ def valida_iin(input_string): #N
     
 
     for tuplo in tuplo_iins:
-        if len(input_string) in tuplo[1] and comeca_por_um(input_string, tuplo[2]):
+        if len(input_string) in tuplo[1] and comeca_por_um(input_string,
+           tuplo[2]):
             return tuplo[0]
         
     else:
@@ -177,11 +178,12 @@ def categoria(numero): #M
                       'Servicos bancarios e financeiros',
                       'Merchandising e bancario / financeiro',
                       'Petroleo e outras atribuicoes futuras da industria',
-                      'Saude, telecomunicacoes e outras atribuicoes futuras da industria',
+                      'Saude, telecomunicacoes e outras atribuicoes futuras da \
+industria',
                       'Atribuicao nacional') 
         
         # A primeira posicao do tuplo corresponde ao zero.
-        # Subtrai-se 1 ao primeiro digito para obtermos a correspondencia correta:
+        # Subtrai-se 1 ao primeiro digito para obter a correspondencia correta:
         return categorias[int(numero[0])-1]
     
     else:
