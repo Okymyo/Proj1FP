@@ -11,11 +11,18 @@ def verifica_cc(num_cc): #N
        numero corresponder a um cartao de credito ou a cadeia de caracteres.
        Em caso contrario devolve uma string com 'Cartao Invalido'.'''
     
+    # Vamos realizar uma pequena validacao inicial, para certificar que
+    # nenhuma das funcoes recebe algo que nao consiga manipular
+    if type(num_cc) != int:
+        return 'cartao invalido'
+    
     # Como todas as funcoes secundarias recebem strings, converte-se.
     num_cc = str(num_cc)
     
     resposta = (categoria(num_cc), valida_iin(num_cc))
     
+    # Verificar que o cartao respeita o algoritmo de luhn, e que nao tem
+    # respostas invalidas na categoria ou IIN.
     if (luhn_verifica(num_cc) and resposta[0] != '' and resposta[1] != ''):
         return resposta
     
