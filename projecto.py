@@ -59,10 +59,6 @@ def gera_num_cc(rede_em): #N
     
     for tuplo in tuplo_rede:
         if tuplo[0] == rede_em:
-            # Metodo 2:
-            # num_digitos = tuplo[1][int(random.random() * 10) % len(tuplo[1])]
-            # cartao = tuplo[2][int(random.random() * 10) % len(tuplo[2])]
-            
             num_digitos = random.choice(tuplo[1])
             cartao = random.choice(tuplo[2])
             
