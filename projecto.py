@@ -84,6 +84,7 @@ def calc_soma(a_somar):
         # Multiplica por 2 os numeros em posicoes impares, que na lista
         # correspondem a posicoes pares.
         temp[i] = temp[i] * 2
+        
         # Subtrai 9 caso o resultado seja superior a 9.
         if temp[i] > 9:
             temp[i] -= 9
@@ -195,5 +196,4 @@ def digito_verificacao(numero_cc):
     # Para obter o ultimo digito, calcula-se o resto da divisao por 10 do
     # simetrico do numero dado.
     # Devolve o digito necessario para a soma ser divisivel por 10.
-    
     return str(-calc_soma(numero_cc) % 10)
