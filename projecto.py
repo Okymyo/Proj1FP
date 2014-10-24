@@ -17,7 +17,7 @@ def verifica_cc(num_cc):
     resposta = (categoria(num_cc), valida_iin(num_cc))
     
     # Verifica que o cartao respeita o algoritmo de luhn, e que nao tem
-    # respostas invalidas na categoria ou IIN.
+    # respostas invalidas nem na categoria nem no IIN.
     if (luhn_verifica(num_cc) and resposta[0] != '' and resposta[1] != ''):
         return resposta
     
@@ -38,7 +38,6 @@ def gera_num_cc(rede_em):
     # Primeira entrada: abreviatura
     # Segunda entrada: tuplo com possiveis comprimentos
     # Terceira entrada: tuplo com possiveis primeiros digitos
-    
     tuplo_rede = (('AE', (15,), (34, 37)),
                  ('DCI', (14,), (309, 36, 38, 39)),
                  ('DC', (16,), (65,)),
@@ -81,14 +80,13 @@ def calc_soma(a_somar):
         # Guarda os caracteres numa lista temporaria, como ints, invertidos.
         temp = [int(c)] + temp 
    
-    for i in range(0, len(temp)):
+    for i in range(0, len(temp), 2):
         # Multiplica por 2 os numeros em posicoes impares, que na lista
         # correspondem a posicoes pares.
-        if i % 2 == 0:
-            temp[i] = temp[i] * 2
-            # Subtrai 9 caso o resultado seja superior a 9.
-            if temp[i] > 9:
-                temp[i] -= 9
+        temp[i] = temp[i] * 2
+        # Subtrai 9 caso o resultado seja superior a 9.
+        if temp[i] > 9:
+            temp[i] -= 9
                 
     # Soma todos os numeros da lista para obter o resultado.
     for n in temp:
@@ -141,7 +139,6 @@ def valida_iin(input_string):
     # Primeira entrada: nome
     # Segunda entrada: tuplo com possiveis comprimentos
     # Terceira entrada: tuplo com possiveis primeiros digitos
-    
     tuplo_iins = (('American Express', (15,), ('34', '37')),
              ('Diners Club International', (14,), ('309', '36', '38', '39')),
              ('Discover Card', (16,), ('65',)),
@@ -182,7 +179,6 @@ industria',
         
         # A primeira posicao do tuplo corresponde ao zero.
         # Subtrai-se 1 ao primeiro digito para obter a correspondencia correta.
-
         return categorias[int(numero[0])-1]
     
     else:
