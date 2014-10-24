@@ -11,16 +11,6 @@ def verifica_cc(num_cc):
        numero corresponder a um cartao de credito ou a cadeia de caracteres.
        Em caso contrario devolve uma string com 'Cartao Invalido'.'''
     
-    # Vamos realizar uma pequena validacao inicial, para certificar que
-    # nenhuma das funcoes recebe algo que nao consiga manipular
-    # Em vez de verificar individualmente cada digito, converte-se para int,
-    # e caso devolva erro o cartao e invalido.
-    
-    try:
-        num_cc = int(num_cc)
-    except ValueError:
-        return 'cartao invalido'
-    
     # Como todas as funcoes secundarias recebem strings, converte-se.
     num_cc = str(num_cc)
     
@@ -89,8 +79,7 @@ def calc_soma(a_somar):
     
     for c in a_somar:
         # Guarda os caracteres numa lista temporaria, como ints, invertidos.
-        temp = [int(c)] + temp
-     
+        temp = [int(c)] + temp 
    
     for i in range(0, len(temp)):
         # Multiplica por 2 os numeros em posicoes impares, que na lista
