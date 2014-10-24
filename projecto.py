@@ -9,7 +9,7 @@ def verifica_cc(num_cc):
        de um cartao de credito.
        Devolve um tuplo contendo a categoria e a rede do cartao se o
        numero corresponder a um cartao de credito ou a cadeia de caracteres.
-       Em caso contrario devolve uma string com 'Cartao Invalido'.'''
+       Em caso contrario devolve uma string com 'cartao invalido'.'''
     
     # Como todas as funcoes secundarias recebem strings, converte-se.
     num_cc = str(num_cc)
@@ -114,7 +114,7 @@ def comeca_por(cad1,cad2):
        Devolve verdadeiro se cad1 comecar por cad2. 
        Caso contrario devolve falso.'''
     
-    return cad2 in cad1[0:len(cad2)]
+    return cad2 == cad1[0:len(cad2)]
     
 def comeca_por_um(cad,t_cads):
     '''Funcao comeca_por_um: (string,tuple) -> bool
@@ -123,6 +123,7 @@ def comeca_por_um(cad,t_cads):
        Devolve verdadeiro apenas se cad comecar por um 
        dos elementos do tuplo t_cads.'''
     
+    # Para cada cadeia dada no tuplo, verifica se cad comeca por essa string
     for c in t_cads:
         if comeca_por(cad, c):
             return True
